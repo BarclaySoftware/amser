@@ -41,13 +41,13 @@
 /* These are the fonts that will render on the web desktop. Keep these open source ones or use your own. */
 @font-face {
     font-family: 'Amser Flex';
-    src: url(/AmserFlex.ttf);
+    src: url('/AmserFlex.ttf');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Amser Flex Bold';
-    src: url(/AmserFlex-Bold.ttf);
+    src: url('/AmserFlex-Bold.ttf');
     font-weight: 700;
 }
 
