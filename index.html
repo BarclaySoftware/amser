@@ -1,0 +1,319 @@
+<!-- Copyright 2024 THe AMSER Authors. All rights reserved. -->
+<!-- Use of this source code is governed by a Barclay license that can be -->
+<!-- found in the LICENSE file. -->
+<!-- This web desktop is based on code from the Caesium WebKernel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Change to the icon of your web desktop. -->
+    <!-- Delete any sizes you don't want or need. -->
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="76x76">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="120x120">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="228x228">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="300x300">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="384x384">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="600x600">
+
+    <!-- This is where you can design your custom web desktop. -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Change to the name of your web desktop. -->
+    <title>Barclay WebDesktop (alpha v0.0.0.1)</title>
+</head>
+<body>
+    <!-- We're so sorry. -->
+    <!-- This is the actual 'desktop', where everything is rendered. -->
+    <div class="desktop">
+        <!-- This is where all of the apps are actually created. Add or remove apps you want or don't need. -->
+        <!-- There are two types of apps for you to choose from: text-based and embedded. -->
+        <!-- Text-based apps are for text-only apps like About or Welcome. -->
+        <!-- Embedded apps are where the iFrames come in. -->
+        <div class="window" id="welcome">
+            <div class="window-header">
+                Welcome to Barclay WebDesktop
+                <span class="close-btn" onclick="closeWindow('welcome')" title="Close">&times;</span>
+            </div>
+            <div class="window-body-center">
+                <p>Welcome to Barclay WebDesktop, your personal web desktop environment. Explore the features and enjoy!
+                </p>
+            </div>
+        </div>
+
+        <!-- Make sure the app ID is the same here as in the appbar. If it isn't the code may not work. -->
+        <div class="window" id="help">
+            <div class="window-header">
+                Barclay WebDesktop Help
+                <span class="close-btn" onclick="closeWindow('help')" title="Close">&times;</span>
+            </div>
+            <div class="window-body">
+                Help docs will be here soon. Please come back later!
+            </div>
+        </div>
+
+        <div class="window" id="about">
+            <div class="window-header">
+                About Barclay WebDesktop
+                <span class="close-btn" onclick="closeWindow('about')" title="Close">&times;</span>
+            </div>
+            <div class="window-body-center">
+                <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" alt="Barclay WebDesktop">
+                <br>
+                <b>Barclay WebDesktop</b>
+                <p>Barclay WebDesktop is an open-source web desktop created by Barclay Software. All applications in
+                    Barclay WebDesktop are free and open source.</p>
+            </div>
+        </div>
+
+        <div class="window" id="calculator">
+            <div class="window-header">
+                Calculator
+                <span class="close-btn" onclick="closeWindow('calculator')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://caesiumapps.pages.dev/calculator/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="notes">
+            <div class="window-header">
+                Notes
+                <span class="close-btn" onclick="closeWindow('notes')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://caesiumapps.pages.dev/notes/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="search">
+            <div class="window-header">
+                Barclay Search
+                <span class="close-btn" onclick="closeWindow('search')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://barclaygo.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="terminal">
+            <div class="window-header">
+                AS-TWD Terminal
+                <span class="close-btn" onclick="closeWindow('terminal')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://as-twd.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="video">
+            <div class="window-header">
+                OpeningNight
+                <span class="close-btn" onclick="closeWindow('video')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://openingnight.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="audio">
+            <div class="window-header">
+                WebComposer
+                <span class="close-btn" onclick="closeWindow('audio')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://webcomposer.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="code">
+            <div class="window-header">
+                HtmStorm
+                <span class="close-btn" onclick="closeWindow('code')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://htmstorm.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="minipaint">
+            <div class="window-header">
+                miniPaint
+                <span class="close-btn" onclick="closeWindow('minipaint')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://viliusle.github.io/miniPaint/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="browser">
+            <div class="window-header">
+                Barclay MiniBrowser
+                <span class="close-btn" onclick="closeWindow('browser')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://caesiumapps.pages.dev/browser/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="canvas">
+            <div class="window-header">
+                Canvas
+                <span class="close-btn" onclick="closeWindow('canvas')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://caesium.pages.dev/apps/canvas"></iframe>
+            </div>
+        </div>
+
+        <!-- This is the code for the Launcher app. -->
+        <div class="window" id="launcher">
+            <div class="window-header">
+                App List
+                <span class="close-btn" onclick="closeWindow('launcher')" title="Close">&times;</span>
+            </div>
+            <div class="window-body">
+                <ul class="app-list">
+                    <li class="app-list-item" onclick="openWindow('welcome')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" alt="Welcome">
+                        <span>Welcome</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('minipaint')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/minipaint.png" alt="About">
+                        <span>miniPaint</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('search')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/search.png" alt="Search">
+                        <span>Search</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('browser')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/browser.png" alt="Browser">
+                        <span>Browser</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('calculator')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/calculator.png" alt="Calculator">
+                        <span>Calculator</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('notes')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/dotlin.png" alt="Notes">
+                        <span>Notes</span>
+                    </li>
+                    <li class="app-list-item" onclick="openWindow('canvas')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/canvas.png" alt="Canvas">
+                        <span>Canvas</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('terminal')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/terminal.png" alt="Terminal">
+                        <span>Terminal</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('video')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/openingnight.png" alt="Video Editor">
+                        <span>Video Editor</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('audio')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/webcomposer.png" alt="Audio Editor">
+                        <span>Audio Editor</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('code')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/htmstorm.png" alt="Code Editor">
+                        <span>Code Editor</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('help')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/help.png" alt="Help">
+                        <span>Help</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('about')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" alt="About">
+                        <span>About</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the appbar, where the icons and the links for the apps are. Make sure the ID in the openWindow() -->
+    <!-- function is the correct one as the ID in the first section. -->
+    <div class="appbar">
+        <div class="app" id="app-launcher" onclick="openWindow('launcher')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/launcher.png" title="Launcher">
+        </div>
+
+        <div class="app" id="app-welcome" onclick="openWindow('welcome')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" title="Welcome">
+        </div>
+
+        <div class="app" id="app-search" onclick="openWindow('search')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/search.png" title="search">
+        </div>
+
+        <div class="app" id="app-browser" onclick="openWindow('browser')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/browser.png" title="Photos">
+        </div>
+
+        <div class="app" id="app-calculator" onclick="openWindow('calculator')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/calculator.png" title="Calculator">
+        </div>
+
+        <div class="app" id="app-notes" onclick="openWindow('notes')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/dotlin.png" title="Notes">
+        </div>
+
+        <div class="app" id="app-canvas" onclick="openWindow('canvas')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/canvas.png" title="Photos">
+        </div>
+
+        <div class="app" id="app-terminal" onclick="openWindow('terminal')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/terminal.png" title="Terminal">
+        </div>
+
+        <div class="app" id="app-video" onclick="openWindow('video')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/openingnight.png" title="OpeningNight">
+        </div>
+
+        <div class="app" id="app-audio" onclick="openWindow('audio')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/webcomposer.png" title="WebComposer">
+        </div>
+
+        <div class="app" id="app-code" onclick="openWindow('code')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/htmstorm.png" title="HtmStorm">
+        </div>
+
+        <div class="app" id="app-minipaint" onclick="openWindow('minipaint')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/minipaint.png" title="miniPaint">
+        </div>
+
+        <div class="app" id="app-help" onclick="openWindow('help')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/help.png" title="Help">
+        </div>
+
+        <div class="app" id="app-about" onclick="openWindow('about')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" title="About">
+        </div>
+    </div>
+
+    <!-- This is where the fun begins. -->
+     <script src="script.js"></script>
+</body>
+</html>
