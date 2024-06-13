@@ -35,4 +35,4 @@
 3. **[Glass CSS](https://www.css.glass/)** for providing coding services.
 4. **[FontForge](https://www.fontforge.org/)** for providing font editing services.
 5. **[GitHub](https://www.github.com/)** for providing code hosting services
-6. **[Cloudflare Pages](https://pages.cloudflare.com/)** for providing
+6. **[Cloudflare Pages](https://pages.cloudflare.com/)** for providing web hosting services.
