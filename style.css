@@ -1,7 +1,7 @@
 :root {
     /* System Fonts */
-    --system-font-regular: 'Amser Flex';
-    --system-font-bold: 'Amser Flex Bold';
+    --system-font-regular: 'system ui';
+    --system-font-bold: 'system ui bold';
 
     /* System Colors */
     /* Light Theme Colors */
@@ -40,14 +40,14 @@
 
 /* These are the fonts that will render on the web desktop. Keep these open source ones or use your own. */
 @font-face {
-    font-family: 'Amser Flex';
-    src: url(https://amser.pages.dev/AmserFlex.ttf);
+    font-family: 'system ui';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/noboto.ttf);
     font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Amser Flex Bold';
-    src: url(https://amser.pages.dev/AmserFlex-Bold.ttf);
+    font-family: 'system ui bold';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/noboto-bold.ttf);
     font-weight: 700;
 }
 
@@ -183,6 +183,7 @@ p {
 
 /* This tells the user what app they are using, and lets them move the the window around. */
 .window-header {
+    font-family: var(--system-font-bold);
     background: var(--system-color-bkg-dark);
     color: var(--system-color-primary-lite);
     padding: 5px 10px;
