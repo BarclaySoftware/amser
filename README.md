@@ -1,20 +1,38 @@
 # Amser - The Free and Open-Source Web Desktop
-Amser, the Welsh word for 'time', is a simple and customizable web desktop based on code from the [Caesium](https://github.com/BarclaySoftware/caesium) project, with some cool differences. See below for additions and changes.
+**Amser**, the Welsh word for 'time', is a make of the **[Caesium](https://github.com/BarclaySoftware/caesium)** project, which we also develop. Amser has some cool differences to Caesium. See them below.
 
-## Note!
-Amser is developed by the authors of Caesium, Barclay Software, but it has a different team who has different objectives in mind.
+## Key Features (for Developers)
+1. Simplification of code.
+    - This make of Caesium has removed all unwanted code and files, and moved the important code around. We've even added some comments so you can make out what is going on! Caesium is the non-outside dev version of our WebKernel, even though it is still open source.
+    - We removed **ID Central**, the main page of the Caesium project that sends users to the version most fit for their screen size. We've also removed **Caesium Mobile**, as Amser is targeted to desktop users. If we add more features to Caesium Mobile in the future, we may create a mobile version of Amser.
+    - We moved the CSS and JavaScript code to their own separate files, `style.css` and `script.js` respectively. This makes the main `index.html` file less cluttered and makes editing the developer experience better.
+2. Implementation of CSS variables.
+    - Within the `style.css` file, we have included an extensive list of CSS variables that make it easier for the developer to edit colors, without having to find each instance of a color and change it one-by-one.
+    - The CSS variables also make it easier to use custom fonts. We recommend keepin the variable names as they are, and only changing the color codes or font names.
+3. Renaming of HTML elements.
+    - In Caesium, we named apps 'tasks' and called the section where the 'task icons' go the 'taskbar'. These names aren't true to what they actually are. So, in Amser we changed them to be 'apps' that open when you click an 'app icon', which are located in the 'appbar'.
+4. Inclusion of more open source software.
+    - It wouldn't be fun to have proprietary in an open source web desktop, would it? No. That's why we moved away from closed source software, like our brand fonts and closed source programs in favor of only open source items in this make of Caesium.
+        - Some of these open source softwares include:
+            1. Display fonts.
+            2. Exclusive access to the CaesiumApps directory. (see **Extra Features**)
+            3. Release of proprietary code.
+            4. And more!
 
-# Amser vs Caesium
-1. Caesium is a set of three major programs: ID Central, Caesium Desktop, and Caesium Mobile. This dist only wants one.
-    - ID Central is the main page of the Caesium project. When the user opens the page, ID Central checks the size of the screen the user is on. If it is too small, then ID Central sends the user to the Mobile version of Caesium. If it is any other size larger than a mobile screen, then ID Central sends the user to Caesium Desktop.
-    - Amser removes ID Central because we are not interested in a mobile version because of the limited features. If Caesium Mobile is updated to include more functionality, then we may consider an Amser Mobile web desktop.
-2. Caesium has a cluttered code base.
-    - To make editing seamless for the development team, both version of Caesium are only one file each, with some external files for certain apps.
-    - Amser's code base has moved the CSS and JavaScript code to their own files, `style.css` and `script.js` respectively. We also added comments to the original Caesium code and to the new code we added.
-3. Caesium wasn't as customizable for developers.
-    - Caesium was designed for simple use, but as they added more code to each project, it became cluttered, and their one-file system wasn't ideal for that much code. To keep things similar, we couldn't move things around, so our code is a bit cluttered too, but not as much.
-4. Amser has more advanced designs and accessibility (in development)
-    - In Caesium, when the user opens an app, the 'taskbar' (now the 'appbar' in Amser) makes no indication about which apps are open, the user needs to look at the 'desktop' to see which windows are open. In Ameser, we added an 'active-appbar-icon' CSS class to display a line under the appbar icon of the opened app(s).
-    - Amser also adds CSS variables, so if you want to make your own web desktop with a custom theme, then you only have to change the CSS variables instead of having to change every instance of a color or font in the CSS file. This may make more work in the beginning, but you won't have to worry about creating custom themes later.
-    - Amser uses fully open source fonts for the UI. In this version, Amser Hyd, uses a custom version of Robot Flex, which will be available in the source code and free for you to use.
-    - We are still working, but we are adding accessibility for elements of the web desktop, where Caesium was lacking.
+## Key Features (for Users)
+1. User friendly designs.
+    - In regular Caesium, when a user selects an app, there is no indication that it has been opened, aside from the fact that the app window appears. So, we took inspiration from operating systems and we added a little bar at the bottom of the icons opened apps. This makes it easier to distinguish opened apps from closed ones.
+    - We made the text in the app titlebar bolded so you can distinguish titlebar text from normal app text.
+2. Accessibility (in progress)
+    - In our attempt to make Amser open and available to everyone, we've begun to implement the usage of HTML accessibility tags in our code so users who have a hard time can get to things on Amser without a struggle.
+
+## Extra Features
+1. As stated before, we do offer exclusive access to our closed and in-house CaesiumApps directory, where all of the Caesium apps are stored. We are willing to give any and every developer who agrees to our **Special Cases License** a free rendition of the Caesium Apps Suite 1.0.
+
+## Acknowledgments
+1. **[Realtime Colors](https://www.realtimecolors.com/)** for providing theming and coloring services.
+2. **[Google Fonts](https://fonts.google.com/)** for providing the Roboto font sources.
+3. **[Glass CSS](https://www.css.glass/)** for providing coding services.
+4. **[FontForge](https://www.fontforge.org/)** for providing font editing services.
+5. **[GitHub](https://www.github.com/)** for providing code hosting services
+6. **[Cloudflare Pages](https://pages.cloudflare.com/)** for providing
