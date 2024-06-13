@@ -25,6 +25,8 @@
     - We made the text in the app titlebar bolded so you can distinguish titlebar text from normal app text.
 2. Accessibility (in progress)
     - In our attempt to make Amser open and available to everyone, we've begun to implement the usage of HTML accessibility tags in our code so users who have a hard time can get to things on Amser without a struggle.
+3. Keeping windows in.
+    - In Caesium, users can drag windows outside of the webpage, potentially losing them. The only way to get them back is to reload the page. This is not good design, so we decided to edit the code so it is virtually impossible for the user to lose their windows.
 
 ## Extra Features
 1. As stated before, we do offer exclusive access to our closed and in-house CaesiumApps directory, where all of the Caesium apps are stored. We are willing to give any and every developer who agrees to our **Special Cases License** a free rendition of the Caesium Apps Suite 1.0.
