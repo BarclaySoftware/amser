@@ -47,8 +47,17 @@
                 <span class="close-btn" onclick="closeWindow('welcome')" title="Close">&times;</span>
             </div>
             <div class="window-body-center">
-                <p>Welcome to Amser, your personal web desktop environment. Explore the features and enjoy!
-                </p>
+                <p>Amser is an experimental clone of the Caesium project, with advanced features and designs. Please be careful when using this web desktop. If you see an issue, submit a ticket to us at ourjupitergroup@gmail.com with full details.</p>
+            </div>
+        </div>
+
+        <div class="window" id="updates">
+            <div class="window-header">
+                Amser ReleasePad
+                <span class="close-btn" onclick="closeWindow('updates')" title="Close">&times;</span>
+            </div>
+            <div class="window-body-center">
+                <p><b>New Features</b><br>Custom cursors (pointer, move, finger)<br>New app (ReleasePad)<br>New font (Element Sans)</p>
             </div>
         </div>
 
@@ -185,6 +194,11 @@
             </div>
             <div class="window-body">
                 <ul class="app-list">
+                    <li class="app-list-item" onclick="openWindow('updates')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" alt="Updates">
+                        <span>ReleasePad</span>
+                    </li>
+
                     <li class="app-list-item" onclick="openWindow('welcome')">
                         <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" alt="Welcome">
                         <span>Welcome</span>
@@ -256,6 +270,10 @@
     <!-- This is the appbar, where the icons and the links for the apps are. Make sure the ID in the openWindow() -->
     <!-- function is the correct one as the ID in the first section. -->
     <div class="appbar">
+        <div class="app" id="app-launcher" onclick="openWindow('updates')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" title="ReleasePad (Updates)">
+        </div>
+
         <div class="app" id="app-launcher" onclick="openWindow('launcher')">
             <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/launcher.png" title="Launcher">
         </div>

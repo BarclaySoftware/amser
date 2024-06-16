@@ -68,5 +68,5 @@ document.addEventListener('contextmenu', function (event) {
 // This opens the Welcome app when the web desktop loads completely.
 // Change the app ID to make a different app be the default one to open.
 window.onload = function () {
-    openWindow('welcome');
+    openWindow('updates');
 }
