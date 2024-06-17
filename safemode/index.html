@@ -1,0 +1,177 @@
+<!-- Copyright 2024 The AMSER Authors. All rights reserved. -->
+<!-- Use of this source code is governed by a Barclay license that can be -->
+<!-- found in the LICENSE file. -->
+<!-- This web desktop is based on code from the Caesium WebKernel -->
+
+<!-- WARNING: This is the code for the Barclay Amser SAFEMODE Web Desktop (or just Amser SafeMode),
+which is a basic version of Amser with all extras removed and security enhanced. This is not to be
+changed, lest you wish to find your license invalidated! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Change to the icon of your web desktop. -->
+    <!-- Delete any sizes you don't want or need. -->
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="76x76">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="120x120">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="228x228">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="300x300">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="384x384">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="https://delivercdn.pages.dev/barclay/images/WebTerminal-Icon.png" sizes="600x600">
+
+    <!-- This is where you can design your custom web desktop. -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Change to the name of your web desktop. -->
+    <title>Amser</title>
+</head>
+<body>
+    <!-- We're so sorry. -->
+    <!-- This is the actual 'desktop', where everything is rendered. -->
+    <div class="desktop">
+        <!-- This is where all of the apps are actually created. Add or remove apps you want or don't need. -->
+        <!-- There are two types of apps for you to choose from: text-based and embedded. -->
+        <!-- Text-based apps are for text-only apps like About or Welcome. -->
+        <!-- Embedded apps are where the iFrames come in. -->
+        <div class="window" id="welcome">
+            <div class="window-header">
+                Barcaly Amser SafeMode
+                <span class="close-btn" onclick="closeWindow('welcome')" title="Close">&times;</span>
+            </div>
+            <div class="window-body-center">
+                <p>This is a limited-use version of Barclay Amser. All 3rd-party and non-essential apps have been removed. This version of Barclay Amser should only be used if you have experienced a horrible error in your normal version of Barclay Amser. In other words, this should be your last resort.</p>
+            </div>
+        </div>
+
+        <!-- Make sure the app ID is the same here as in the appbar. If it isn't the code may not work. -->
+        <div class="window" id="help">
+            <div class="window-header">
+                Amser SafeMode Help
+                <span class="close-btn" onclick="closeWindow('help')" title="Close">&times;</span>
+            </div>
+            <div class="window-body-center">
+                Help docs will be here soon. Please come back later!
+            </div>
+        </div>
+
+        <div class="window" id="about">
+            <div class="window-header">
+                About Amser SafeMode
+                <span class="close-btn" onclick="closeWindow('about')" title="Close">&times;</span>
+            </div>
+            <div class="window-body-center">
+                <p>SafeMode is a limited-use version of Barcaly Amser and designed to be a sort of Amser Lite. All 3rd-party and non-essential apps have been removed from this version to make the experience and load time better and faster. Barcaly Amser SafeMode is designed to only be a last resort if your copy of Amser has experienced a fatal bug. Entering SafeMode may have been an accident, as you can quickly change to it with the CTRL+S shortcut. To return to the normal version of Barcaly Amser, use the CTRL+G shortcut.</p>
+            </div>
+        </div>
+
+        <div class="window" id="search">
+            <div class="window-header">
+                Barclay Search
+                <span class="close-btn" onclick="closeWindow('search')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://barclaygo.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="terminal">
+            <div class="window-header">
+                AS-TWD Terminal
+                <span class="close-btn" onclick="closeWindow('terminal')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://as-twd.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="browser">
+            <div class="window-header">
+                Barclay MiniBrowser
+                <span class="close-btn" onclick="closeWindow('browser')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://caesiumapps.pages.dev/browser/"></iframe>
+            </div>
+        </div>
+
+        <!-- This is the code for the Launcher app. -->
+        <div class="window" id="launcher">
+            <div class="window-header">
+                App List
+                <span class="close-btn" onclick="closeWindow('launcher')" title="Close">&times;</span>
+            </div>
+            <div class="window-body">
+                <ul class="app-list">
+                    <li class="app-list-item" onclick="openWindow('search')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/search.png" alt="Search">
+                        <span>Search</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('browser')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/browser.png" alt="Browser">
+                        <span>Browser</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('terminal')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/terminal.png" alt="Terminal">
+                        <span>Terminal</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('help')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/help.png" alt="Help">
+                        <span>Help</span>
+                    </li>
+
+                    <li class="app-list-item" onclick="openWindow('about')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" alt="About">
+                        <span>About</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the appbar, where the icons and the links for the apps are. Make sure the ID in the openWindow() -->
+    <!-- function is the correct one as the ID in the first section. -->
+    <div class="appbar">
+        <div class="app" id="app-launcher" onclick="openWindow('launcher')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/launcher.png" title="Launcher">
+        </div>
+
+        <div class="app" id="app-browser" onclick="openWindow('browser')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/browser.png" title="Photos">
+        </div>
+        
+        <div class="app" id="app-search" onclick="openWindow('search')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/search.png" title="search">
+        </div>
+
+        <div class="app" id="app-terminal" onclick="openWindow('terminal')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/terminal.png" title="Terminal">
+        </div>
+        
+        <div class="app" id="app-help" onclick="openWindow('help')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/help.png" title="Help">
+        </div>
+
+        <div class="app" id="app-about" onclick="openWindow('about')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" title="About">
+        </div>
+    </div>
+
+    <!-- This is where the fun begins. -->
+     <script src="./script.js"></script>
+</body>
+</html>

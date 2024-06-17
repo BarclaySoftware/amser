@@ -1,0 +1,297 @@
+/* NOTE: ALL CURSORS ARE EXPERIMENTAL. */
+
+:root {
+    /* System Fonts */
+    --system-font-regular: 'system ui';
+    --system-font-bold: 'system ui bold';
+
+    /* System Colors */
+    /* Light Theme Colors */
+    --system-color-primary-lite: white;
+    --system-color-secondary-lite: aqua;
+    --system-color-accent-lite: blue;
+    --system-color-bkg-lite: white;
+    --system-color-font-lite: black;
+
+    /* Dark Theme Colors */
+    --system-color-primary-dark: aqua;
+    --system-color-secondary-dark: teal;
+    --system-color-accent-dark: cyan;
+    --system-color-bkg-dark: black;
+    --system-color-font-dark: white;
+    
+    /* Element-Specific Colors */
+    --system-appbar-color-dark: black;
+    --system-appbar-color-lite: white;
+
+    /* Scrollbar Colors */
+    /* AppBar Scroller */
+    --system-appbar-scroll-background: gray;
+    --system-appbar-scroll-track-background: lightgray;
+    --system-appbar-scroll-thumb-background: gray;
+    --system-appbar-scroll-thumb-hover-background: gray;
+    --system-appbar-scroll-thumb-active-background: gray;
+
+    --system-scroll-background: gray;
+    --system-scroll-track-background: lightgray;
+    --system-scroll-thumb-background: gray;
+    --system-scroll-thumb-hover-background: gray;
+    --system-scroll-thumb-active-background: gray;
+}
+
+/* These are the fonts that will render on the web desktop. Keep these open source ones or use your own. */
+@font-face {
+    font-family: 'system ui';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/HelvetiiGrotesk.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'system ui bold';
+    src: url(https://delivercdn.pages.dev/WebKernel/fonts/HelvetiiGrotesk-Bold.ttf);
+    font-weight: 700;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--system-font-regular);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+}
+
+b {
+    font-family: var(--system-font-bold);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+}
+
+p {
+    font-family: var(--system-regular);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+}
+
+/* Decide what color text will be highlighted in. */
+::selection {
+    background-color: var(--system-color-accent-lite);
+    color: var(--system-color-font-dark);
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+::-moz-selection {
+    background-color: var(--system-color-accent-lite);
+    color: var(--system-color-font-dark);
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+/* This is the actual 'desktop', or where app windows will open. To make the walpaper not go behind the app bar, */
+/* add '-56px' to 'calc(100%)' in the 'height' style. Change '56px' to the actual size of the appbar that you set. */
+.desktop {
+    width: 100%;
+    height: calc(100%);
+    background: url('https://delivercdn.pages.dev/WebKernel/images/safemode.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: url('https://delivercdn.pages.dev/os/cursors/pointer.ico'), pointer;
+}
+
+/* This is where the app icons will load. You can remove the SeeGlass style and make it solid or a different design. */
+.appbar {
+    background: var(--system-appbar-color-dark);
+    width: 100%;
+    height: 56px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--system-color-font-lite);
+    display: flex;
+    padding-top: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    justify-content: center;
+    align-items: center;
+    cursor: url('https://delivercdn.pages.dev/os/cursors/pointer.ico'), pointer;
+}
+
+/* If there are too many app icons or the appbar is too short, then these scrollbars will show up. */
+/* These scrollbars are different than the acutal ones in the rest of the web desktop. */
+.appbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: var(--system-appbar-scroll-background);
+}
+
+.appbar::-webkit-scrollbar-track {
+    background: var(--system-appbar-scroll-track-background);
+}
+
+.appbar::-webkit-scrollbar-thumb {
+    background: var(--system-appbar-scroll-thumb-background);
+    border-radius: 0px;
+}
+
+.appbar::-webkit-scrollbar-thumb:hover {
+    background: var(--system-appbar-scroll-thumb-hover-background);
+    border-radius: 0px;
+}
+
+.appbar::-webkit-scrollbar-thumb:active {
+    background: var(--system-appbar-scroll-thumb-active-background);
+    border-radius: 0px;
+}
+
+/* This is the app icon wrapper. */
+.app {
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    white-space: nowrap;
+    cursor: url('https://delivercdn.pages.dev/os/cursors/finger.ico'), pointer;
+}
+
+/* This is the actual thing that shows when the user opens an app. */
+.window {
+    width: 300px;
+    height: 200px;
+    background-color: var(--system-color-font-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    resize: both;
+    min-width: 150px;
+    min-height: 100px;
+    border-radius: 0px;
+    z-index: 1;
+}
+
+/* This tells the user what app they are using, and lets them move the the window around. */
+.window-header {
+    font-family: var(--system-font-bold);
+    background: var(--system-color-bkg-dark);
+    color: var(--system-color-primary-lite);
+    padding: 5px 10px;
+    cursor: url('https://delivercdn.pages.dev/os/cursors/move.ico'), pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+}
+
+/* This is where the contents of the app are located. */
+.window-body {
+    padding: 10px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* This is for text-only apps, like the About or Welcome apps. */
+.window-body-center {
+    text-align: center;
+    padding: 10px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Lets the user close the app window. */
+.close-btn {
+    cursor: url('https://delivercdn.pages.dev/os/cursors/pointer.ico'), pointer;
+    user-select: none;
+}
+
+.iframe-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.iframe-container iframe {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* This is the scrollbar that will show when the user makes a window too small. */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background: var(--system-scroll-background);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--system-scroll-track-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--system-scroll-thumb-background);
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--system-scroll-thumb-hover-background);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--system-scroll-thumb-active-background);
+}
+
+/* This is the image that shows in the About app. */
+img {
+    width: 100px;
+}
+
+/* The icon of the app that will show in the app bar. */
+.appIcon {
+    height: 40px;
+    width: 40px;
+}
+
+/* This is the layout for the Launcher app. */
+.app-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* This is the layout for the listing text in the Launcher app. */
+.app-list-item {
+    display: flex;
+    align-items: center;
+    cursor: url('https://delivercdn.pages.dev/os/cursors/pointer.ico'), pointer;
+    margin-bottom: 10px;
+}
+
+/* This is the layout for the listing icons in the Launcher app. */
+.app-list-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* When the user opens an app, this line will show the icon. */
+.active-appbar-icon {
+    border-bottom: 3px solid var(--system-color-secondary-lite);
+}

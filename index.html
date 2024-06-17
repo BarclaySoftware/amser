@@ -1,4 +1,4 @@
-<!-- Copyright 2024 THe AMSER Authors. All rights reserved. -->
+<!-- Copyright 2024 The AMSER Authors. All rights reserved. -->
 <!-- Use of this source code is governed by a Barclay license that can be -->
 <!-- found in the LICENSE file. -->
 <!-- This web desktop is based on code from the Caesium WebKernel -->
@@ -57,7 +57,7 @@
                 <span class="close-btn" onclick="closeWindow('updates')" title="Close">&times;</span>
             </div>
             <div class="window-body-center">
-                <p><b>New Features</b><br>Custom cursors (pointer, move, finger)<br>New app (ReleasePad)<br>New font (Element Sans)</p>
+                <p><b>New Features</b><br>Custom cursors (pointer, move, finger)<br>New app (ReleasePad)<br>New font (Element Sans)<br>New version (SafeMode)</p>
             </div>
         </div>
 
@@ -67,8 +67,8 @@
                 Amser Help
                 <span class="close-btn" onclick="closeWindow('help')" title="Close">&times;</span>
             </div>
-            <div class="window-body">
-                Help docs will be here soon. Please come back later!
+            <div class="window-body-center">
+                If you need to load into Amser SafeMode, then use the <b>CTRL+S</b> shortcut.
             </div>
         </div>
 
@@ -113,6 +113,16 @@
             </div>
             <div class="window-body iframe-container">
                 <iframe src="https://barclaygo.pages.dev/"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="video">
+            <div class="window-header">
+                Barclay Search
+                <span class="close-btn" onclick="closeWindow('video')" title="Close">&times;</span>
+            </div>
+            <div class="window-body iframe-container">
+                <iframe src="https://onweb.pages.dev/apps/videoplayer"></iframe>
             </div>
         </div>
 
@@ -228,6 +238,7 @@
                         <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/dotlin.png" alt="Notes">
                         <span>Notes</span>
                     </li>
+
                     <li class="app-list-item" onclick="openWindow('canvas')">
                         <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/canvas.png" alt="Canvas">
                         <span>Canvas</span>
@@ -262,6 +273,11 @@
                         <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" alt="About">
                         <span>About</span>
                     </li>
+
+                    <li class="app-list-item" onclick="openWindow('video')">
+                        <img src="https://delivercdn.pages.dev/barclay/images/caesium/apps/about.png" alt="Video">
+                        <span>Video Player</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -271,6 +287,10 @@
     <!-- function is the correct one as the ID in the first section. -->
     <div class="appbar">
         <div class="app" id="app-launcher" onclick="openWindow('updates')">
+            <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" title="ReleasePad (Updates)">
+        </div>
+
+        <div class="app" id="app-launcher" onclick="openWindow('video')">
             <img class="appIcon" src="https://delivercdn.pages.dev/barclay/images/caesium/apps/welcome.png" title="ReleasePad (Updates)">
         </div>
 

@@ -28,11 +28,11 @@ function closeWindow(id) {
     }
 }
 
-// Redirects to the SafeMode version.
+// Redirects to the normal version.
 window.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.key === 's') {
+    if (event.ctrlKey && event.key === 'g') {
         event.preventDefault();
-        window.location.href = './safemode/index.html';
+        window.location.href = './try.html';
     }
 });
 
@@ -76,5 +76,5 @@ document.addEventListener('contextmenu', function (event) {
 // This opens the Welcome app when the web desktop loads completely.
 // Change the app ID to make a different app be the default one to open.
 window.onload = function () {
-    openWindow('updates');
+    openWindow('welcome');
 }
