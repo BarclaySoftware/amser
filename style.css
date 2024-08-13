@@ -2,8 +2,7 @@
 
 :root {
     /* System Fonts */
-    --system-font-regular: 'system ui';
-    --system-font-bold: 'system ui bold';
+    --system-font: 'system ui';
 
     /* System Colors */
     /* Light Theme Colors */
@@ -42,14 +41,8 @@
 /* These are the fonts that will render on the web desktop. Keep these open source ones or use your own. */
 @font-face {
     font-family: 'system ui';
-    src: url(https://onweb.pages.dev/global/fonts/ElementSans.ttf);
+    src: url(./SeavoltUIVariable-VF.ttf);
     font-weight: 400;
-}
-
-@font-face {
-    font-family: 'system ui bold';
-    src: url(https://onweb.pages.dev/global/fonts/ElementSans-Bold.ttf);
-    font-weight: 700;
 }
 
 body, html {
@@ -58,21 +51,23 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: var(--system-font-regular);
+    font-family: var(--system-font);
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
 }
 
 b {
-    font-family: var(--system-font-bold);
+    font-family: var(--system-font);
+    font-weight: 700;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
 }
 
 p {
-    font-family: var(--system-regular);
+    font-family: var(--system-font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
@@ -187,7 +182,8 @@ p {
 
 /* This tells the user what app they are using, and lets them move the the window around. */
 .window-header {
-    font-family: var(--system-font-bold);
+    font-family: var(--system-font);
+    font-weight: 700;
     background: var(--system-color-bkg-dark);
     color: var(--system-color-primary-lite);
     padding: 5px 10px;
